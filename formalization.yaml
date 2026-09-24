@@ -1,0 +1,22 @@
+jsp_id: JSP-000870
+catalog_url: https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0801-0900.md#JSP-000870
+status: wip
+prize_ready: false
+github_owner: Yi-111-a
+lean_repository: https://github.com/Yi-111-a/jsp-000870-reciprocal-series-irrational
+branch: main
+commit_sha: ""
+headline_theorems:
+  - reciprocal_pow2_minus_three_irrational
+roles:
+  formalization_operators:
+    - Yi-111-a
+  mathematical_solvers_literature:
+    - "Borwein (Bo91), J. Number Theory"
+    - "Erdős (Er48, Er88c) Lambert / transcendence series"
+attribution_basis: |
+  Formalization work under GitHub account Yi-111-a. Mathematical solution
+  credits remain with the published literature. This stub does not claim the prize.
+build:
+  toolchain_file: lean/lean-toolchain
+  command: lake build

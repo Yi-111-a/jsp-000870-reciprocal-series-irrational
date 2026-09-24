@@ -1,0 +1,7 @@
+{
+  "jsp_id": "JSP-000870",
+  "catalog_url": "https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0801-0900.md#JSP-000870",
+  "original_question_en": "Is the series of reciprocals of powers of two minus three irrational?",
+  "required_theorems": ["reciprocal_pow2_minus_three_irrational"],
+  "notes": "Target Bo91 / Erdős-series irrationality with exact indexing (avoid n where 2^n=3). Placeholder shifts index by +2; refine to official convention."
+}
