@@ -5,7 +5,7 @@ prize_ready: false
 github_owner: Yi-111-a
 lean_repository: https://github.com/Yi-111-a/jsp-000870-reciprocal-series-irrational
 branch: main
-commit_sha: ""
+commit_sha: "09b6ceb5bba5888b540ffcb29a3809c7e8c418ec"
 headline_theorems:
   - reciprocal_pow2_minus_three_irrational
 roles:
