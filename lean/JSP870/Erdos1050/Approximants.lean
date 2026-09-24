@@ -121,7 +121,7 @@ lemma Iterm_abs_le {n m : ℕ} (hn : 1 ≤ n) (hnm : n ≤ m) :
     rw [Finset.abs_prod]
     calc ∏ k ∈ Finset.Icc 1 (n - 1), |(1 - qB ^ ((k : ℤ) - m)) * (1 - cB * qB ^ ((k : ℤ) + m))⁻¹|
         ≤ ∏ _k ∈ Finset.Icc 1 (n - 1), (1 / 2 : ℝ) :=
-          Finset.prod_le_prod (fun k _ => abs_nonneg _) (fun k hk => by
+          Finset.prod_le_prod₀ (fun k _ => abs_nonneg _) (fun k hk => by
             rw [Finset.mem_Icc] at hk
             exact factor_bound hk.1 (by omega))
       _ = (1 / 2 : ℝ) ^ (Finset.Icc 1 (n - 1)).card := by rw [Finset.prod_const]
@@ -240,7 +240,7 @@ lemma Iterm_abs_le_sharp {n m : ℕ} (hn : 1 ≤ n) (hnm : n ≤ m) :
         (1 - qB ^ ((k : ℤ) - m)) * (1 - cB * qB ^ ((k : ℤ) + m))⁻¹|
       ≤ ∏ k ∈ Finset.Icc 1 (n - 1), (qB ^ (k + m))⁻¹ := by
     rw [Finset.abs_prod]
-    apply Finset.prod_le_prod (fun k _ => abs_nonneg _)
+    apply Finset.prod_le_prod₀ (fun k _ => abs_nonneg _)
     intro k hk; rw [Finset.mem_Icc] at hk
     exact factor_abs_le hk.1 (by omega)
   exact mul_le_mul hlead hprod (abs_nonneg _) (le_of_lt (inv_pos.mpr (pow_pos qB_pos _)))
@@ -381,7 +381,7 @@ lemma Wterm_abs_le {n : ℕ} (hn : 1 ≤ n) :
     rw [Finset.abs_prod]
     calc ∏ k ∈ Finset.Icc 1 n, |1 - cB * qB ^ k|
         ≤ ∏ k ∈ Finset.Icc 1 n, cB * qB ^ k := by
-          apply Finset.prod_le_prod (fun k _ => abs_nonneg _)
+          apply Finset.prod_le_prod₀ (fun k _ => abs_nonneg _)
           intro k hk; rw [Finset.mem_Icc] at hk
           rw [abs_of_neg (by nlinarith [two_le_pow hk.1, two_lt_cB, pow_pos qB_pos k] :
             (1 - cB * qB ^ k) < 0)]
@@ -393,7 +393,7 @@ lemma Wterm_abs_le {n : ℕ} (hn : 1 ≤ n) :
     rw [Finset.abs_prod]
     calc ∏ k ∈ Finset.Icc ((n + 1) / 2) n, |1 - qB ^ k|
         ≤ ∏ k ∈ Finset.Icc ((n + 1) / 2) n, qB ^ k := by
-          apply Finset.prod_le_prod (fun k _ => abs_nonneg _)
+          apply Finset.prod_le_prod₀ (fun k _ => abs_nonneg _)
           intro k hk; rw [Finset.mem_Icc] at hk
           rw [abs_of_nonpos (by nlinarith [two_le_pow (show 1 ≤ k by omega)] : (1 - qB ^ k) ≤ 0)]
           linarith
